@@ -1,5 +1,12 @@
 # SteamShell (Steam BPM Focus + Window Helper)
 
+## Screenshots
+
+### Control Panel (live in Steam Big Picture)
+![SteamShell Control Panel](docs/images/control-panel.png)
+
+**File: SteamShell-Maximize-ChatGPT-v15-SplashVideo.ahk**
+
 ## What it is
 
 - An AutoHotkey v2 “console/kiosk helper” that launches Steam Big Picture Mode (BPM),
@@ -34,6 +41,21 @@
 - Hidden Startup Programs: Optional list of extra programs to launch hidden/minimized at boot.
 - Controller mouse mode (hold View/Back): Right stick moves mouse, left stick scrolls, D-pad arrows.
   Buttons are configurable (Short/Long) via the Controller Mapping window.
+
+## Explorer “ghost mode” (Game Bar / UWP compatibility)
+
+SteamShell uses an “Explorer ghost mode” approach so you get a console-like experience **without** breaking
+Windows features that depend on Explorer/UWP plumbing (notably **Microsoft Game Bar** and other UWP components).
+
+What this means in practice:
+- **Explorer is running in the background** to keep required Windows components happy.
+- The **taskbar / shell UI is hidden**, so you still get a clean “Steam-first” kiosk feel.
+- This helps keep **Game Bar** (Win+G) and other UWP-backed features working, even though you’re not using the
+  normal Explorer desktop as your primary shell.
+
+When Steam exits:
+- SteamShell performs a full desktop restore (unhide taskbar + start/restart Explorer) so you land on a normal desktop.
+- It then resets the Winlogon Shell setting back to SteamShell.exe so the next reboot returns to the SteamShell setup.
 
 ## Scoring (how SteamShell decides what to foreground)
 
