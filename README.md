@@ -3,9 +3,7 @@
 ## Screenshots
 
 ### Control Panel (live in Steam Big Picture)
-![SteamShell Control Panel](docs/images/control-panel.png)
-
-**File: SteamShell-Maximize-ChatGPT-v15-SplashVideo.ahk**
+![SteamShell Control Panel](images/control-panel.png)
 
 ## What it is
 
