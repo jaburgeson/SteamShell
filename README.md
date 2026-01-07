@@ -5,6 +5,9 @@
 ### Control Panel (live in Steam Big Picture)
 ![SteamShell Control Panel](images/control-panel.png)
 
+### Control Panel mockup
+![SteamShell Control Panel mockup](docs/images/control-panel-mockup.png)
+
 ## What it is
 
 - An AutoHotkey v2 “console/kiosk helper” that launches Steam Big Picture Mode (BPM),
@@ -269,6 +272,87 @@ R3.Long=Builtin:None
 ;   None, LeftClick, RightClick, Enter, Esc, AltF4, TabTip, OSK, WinG, TaskManager
 
 ```
+
+## Tips for a console-style Windows setup
+
+These are optional Windows tweaks that make a “boot-to-Steam” PC feel more like a console. Pick what you like.
+
+### Enable auto-login
+**Method A (simple UI, works on many builds):**
+1. Press **Win+R**, type `netplwiz`, press Enter.
+2. Select your user account.
+3. Uncheck **“Users must enter a user name and password to use this computer”**.
+4. Click **Apply**, enter your password, OK, then reboot to test.
+
+If that checkbox is missing, Windows is usually enforcing Windows Hello-only sign-in. Try disabling:
+- **Settings → Accounts → Sign-in options →** turn off **“For improved security, only allow Windows Hello sign-in…”** (wording varies).
+
+**Method B (registry, most reliable but stores a password):**
+> ⚠️ This stores your password in the registry in a reversible form. Only use this on a trusted, physically secure machine.
+1. Press **Win+R**, type `regedit`.
+2. Go to:  
+   `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon`
+3. Set/create these **String (REG_SZ)** values:
+   - `AutoAdminLogon` = `1`
+   - `DefaultUserName` = your username
+   - `DefaultPassword` = your password
+   - `DefaultDomainName` = your PC name (or domain, if applicable)
+4. Reboot and confirm it signs in automatically.
+
+### Set a black wallpaper (and optional lock screen)
+- **Settings → Personalization → Background →** choose **Solid color → Black**.
+- (Optional) **Settings → Personalization → Lock screen →** set a simple/black image and disable extras.
+
+### Disable “require sign-in after sleep”
+- **Settings → Accounts → Sign-in options →**  
+  Set **Require sign-in** to **Never** (or “If you’ve been away… → Never”, wording varies).
+
+### Hide desktop icons
+- Right click the desktop → **View →** uncheck **Show desktop icons**.
+
+### Disable unnecessary startup items
+**Settings path:**
+- **Settings → Apps → Startup** → toggle off anything you don’t need.
+
+**Task Manager path:**
+- Press **Ctrl+Shift+Esc → Startup apps** → disable unneeded entries.
+
+Tip: keep only essentials (GPU tools, audio, controller drivers, Steam/SteamShell helpers). Fewer background tasks = fewer focus oddities.
+
+
+### Reduce UAC prompts (optional)
+If this is a dedicated couch/console PC and you want fewer interruptions, you can lower UAC prompts.
+
+1. Open **Control Panel → User Accounts → Change User Account Control settings**  
+2. Move the slider to **Never notify**  
+3. Click **OK** and reboot
+
+> ⚠️ This reduces security. Only do this on a trusted, physically secure machine.
+
+### Make sleep/monitor behavior console-friendly
+- **Settings → System → Power & battery**:
+  - Consider disabling sleep if you want “always ready”.
+  - Or keep sleep enabled but make wake fast + no sign-in prompt.
+- If you’re using a TV, you may prefer:
+  - **Turn off my screen** sooner than sleep (prevents random wake/HDMI handshakes).
+
+### Reduce distractions
+- **Settings → System → Notifications**: disable spammy notifications.
+- **Focus assist**: set to Off unless you rely on it.
+
+### Keep display scaling stable
+- **Settings → System → Display**:
+  - Use a consistent **Scale** value (often 100%/125%) so windows/layout behave predictably.
+  - If you use HDR/Dolby Vision, keep those settings consistent with your splash/video preferences.
+
+### Controller/overlay sanity checks
+- Ensure **Xbox Game Bar** is enabled if you use it:
+  - **Settings → Gaming → Xbox Game Bar** (or “Game Bar” on Win11).
+- If overlays behave oddly, try running SteamShell/Steam with normal user privileges first (avoid “Run as admin” unless required).
+
+### If you ever get stuck
+- Keep the emergency hotkey available: **Ctrl+Alt+Shift+E**
+- As a recovery path, having a USB keyboard attached is worth it for kiosk builds.
 
 ## Notes / gotchas
 
