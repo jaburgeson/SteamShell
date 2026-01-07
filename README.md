@@ -336,19 +336,21 @@ If this is a dedicated couch/console PC and you want fewer interruptions, you ca
 ### Reduce distractions
 - **Settings → System → Notifications**: disable spammy notifications.
 - **Focus assist**: set to Off unless you rely on it.
+- Enable Do Not Distrub
 
 ### Keep display scaling stable
 - **Settings → System → Display**:
-  - Use a consistent **Scale** value (often 100%/125%) so windows/layout behave predictably.
+  - Use a consistent **Scale** value (often 250%/300% for 4k) so windows/layout behave predictably.
   - If you use HDR/Dolby Vision, keep those settings consistent with your splash/video preferences.
 
 ### Controller/overlay sanity checks
 - Ensure **Xbox Game Bar** is enabled if you use it:
   - **Settings → Gaming → Xbox Game Bar** (or “Game Bar” on Win11).
 - If overlays behave oddly, try running SteamShell/Steam with normal user privileges first (avoid “Run as admin” unless required).
+- Recommend turning off using Xbox Guide Button to activate Game Bar if using Steam Big Picture Mode.  Hotkey can be reassigned in the Controller Mapping Control Panel.
 
 ### If you ever get stuck
-- Keep the emergency hotkey available: **Ctrl+Alt+Shift+E**
+- Keep the emergency hotkey available: **Ctrl+Alt+Shift+E** (Please Note, this will revert your shell back to explorer.exe and SteamShell will NOT start on next reboot)
 - As a recovery path, having a USB keyboard attached is worth it for kiosk builds.
 
 ## Notes / gotchas
