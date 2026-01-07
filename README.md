@@ -1,7 +1,5 @@
 # SteamShell (Steam BPM Focus + Window Helper)
 
-**File: SteamShell-Maximize-ChatGPT-v15-SplashVideo.ahk**
-
 ## What it is
 
 - An AutoHotkey v2 “console/kiosk helper” that launches Steam Big Picture Mode (BPM),
