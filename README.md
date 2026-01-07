@@ -11,6 +11,8 @@
   keeps the right window in front (Steam vs games vs whitelisted apps), optionally
   recenters/maximizes windows, and provides a Control Panel plus controller-to-mouse/keyboard mode.
 
+  ** The .exe file on the releases file was compiled with Ahk2Exe.  If you want to compile your own, please download the .ahk raw file and convert it in ahk2exe.  This was built using ahk version 2.0.19 for 64bit. **
+
 ## Hotkeys
 
 - Ctrl+Alt+Shift+E : Emergency exit to desktop / restore
