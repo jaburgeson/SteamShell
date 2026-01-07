@@ -5,9 +5,6 @@
 ### Control Panel (live in Steam Big Picture)
 ![SteamShell Control Panel](images/control-panel.png)
 
-### Control Panel mockup
-![SteamShell Control Panel mockup](docs/images/control-panel-mockup.png)
-
 ## What it is
 
 - An AutoHotkey v2 “console/kiosk helper” that launches Steam Big Picture Mode (BPM),
